@@ -38,7 +38,7 @@ Complete node catalog covering:
 
 #### API & Integration
 - **[nodes-api-reference](nodes-api-reference.md)** - API integration nodes
-  - HTTPRequestNode, HTTPRequestNode
+  - APICallNode, HTTPRequestNode
   - WebhookNode, GraphQLNode
   - RESTClientNode, SOAPNode
 
@@ -112,7 +112,7 @@ Complete node catalog covering:
 - Local LLMs: OllamaNode
 
 **API Integration** → Use API nodes (`nodes-api-reference`)
-- REST APIs: HTTPRequestNode, HTTPRequestNode
+- REST APIs: APICallNode, HTTPRequestNode
 - Webhooks: WebhookNode
 - GraphQL: GraphQLNode
 
@@ -162,7 +162,7 @@ workflow.add_connection("node1", "result", "node2", "input_data")
 - **PythonCodeNode**: Most flexible, use for custom logic
 - **SwitchNode**: Conditional routing based on values
 - **CSVReaderNode**: Reading CSV files
-- **HTTPRequestNode**: HTTP API calls
+- **APICallNode**: HTTP API calls
 - **LoggerNode**: Debug and production logging
 
 ## When to Use This Skill

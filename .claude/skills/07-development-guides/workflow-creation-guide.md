@@ -32,7 +32,7 @@ workflow.add_connection("processor", "result", "validator", "data")
 
 # Step 4: Execute - ALWAYS call .build()
 runtime = LocalRuntime()  # For CLI/scripts
-results, run_id = runtime.execute(workflow.build(), inputs={
+results, run_id = runtime.execute(workflow.build(), parameters={
     "processor": {"input_data": {"value": 100}}
 })
 
@@ -87,7 +87,7 @@ workflow.add_node("HTTPRequestNode", "api_call", {
 
 **Dynamic Parameters** (set at runtime):
 ```python
-results, run_id = runtime.execute(workflow.build(), inputs={
+results, run_id = runtime.execute(workflow.build(), parameters={
     "api_call": {"url": "https://different-api.com/data"}
 })
 ```

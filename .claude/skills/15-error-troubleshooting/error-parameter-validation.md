@@ -53,7 +53,7 @@ workflow.add_connection("form_data", "email", "create", "email")
 ### Method 3: Runtime Parameters (Override)
 ```python
 # ✅ Provide at runtime execution
-runtime.execute(workflow.build(), inputs={
+runtime.execute(workflow.build(), parameters={
     "create": {"email": "alice@example.com"}
 })
 ```
@@ -119,7 +119,7 @@ workflow.add_node("UserCreateNode", "create", {
 })
 
 runtime = LocalRuntime()
-results, run_id = runtime.execute(workflow.build(), inputs={
+results, run_id = runtime.execute(workflow.build(), parameters={
     "create": {"email": "alice@example.com"}  # Provided at runtime
 })  # ✓ Works!
 ```

@@ -154,7 +154,7 @@ cycle_builder.connect("optimizer", "packager", mapping={"optimized": "optimized"
 
 # Execute
 runtime = LocalRuntime()
-results, run_id = runtime.execute(built_workflow, inputs={
+results, run_id = runtime.execute(built_workflow, parameters={
     "optimizer": {"current_value": 1.0, "target": 10.0}
 })
 ```

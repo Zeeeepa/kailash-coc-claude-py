@@ -16,7 +16,7 @@ workflow.add_node("HTTPRequestNode", "api_call", {
 
 **2. Dynamic Parameters (Runtime)**
 ```python
-runtime.execute(workflow.build(), inputs={
+runtime.execute(workflow.build(), parameters={
     "api_call": {"url": "https://different-api.com"}
 })
 ```
@@ -75,7 +75,7 @@ result = {'config': config}
 })
 
 # Provide via runtime
-runtime.execute(workflow.build(), inputs={
+runtime.execute(workflow.build(), parameters={
     "complex": {
         "db_host": "localhost",
         "db_port": 5432,
