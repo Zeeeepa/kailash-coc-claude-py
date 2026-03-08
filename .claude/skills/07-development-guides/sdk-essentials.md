@@ -128,7 +128,7 @@ workflow.add_node("HTTPRequestNode", "api", {
 })
 
 # Dynamic parameters
-runtime.execute(workflow.build(), inputs={
+runtime.execute(workflow.build(), parameters={
     "api": {"url": "https://different-api.com"}
 })
 

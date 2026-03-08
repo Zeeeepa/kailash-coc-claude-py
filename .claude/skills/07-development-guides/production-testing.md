@@ -100,7 +100,7 @@ result = {
     workflow.add_connection("reader", "processor", "data", "data")
 
     runtime = LocalRuntime()
-    results, run_id = runtime.execute(workflow.build(), inputs={
+    results, run_id = runtime.execute(workflow.build(), parameters={
         "reader": {"connection_string": "sqlite:///:memory:"}
     })
 
@@ -289,19 +289,19 @@ def test_comprehensive_workflow_coverage():
     runtime = LocalRuntime()
 
     # Test high path
-    results_high, _ = runtime.execute(workflow.build(), inputs={
+    results_high, _ = runtime.execute(workflow.build(), parameters={
         "input": {"input_value": 75}
     })
     assert results_high["high_path"]["result"]["category"] == "high"
 
     # Test low path
-    results_low, _ = runtime.execute(workflow.build(), inputs={
+    results_low, _ = runtime.execute(workflow.build(), parameters={
         "input": {"input_value": 25}
     })
     assert results_low["low_path"]["result"]["category"] == "low"
 
     # Test boundary
-    results_boundary, _ = runtime.execute(workflow.build(), inputs={
+    results_boundary, _ = runtime.execute(workflow.build(), parameters={
         "input": {"input_value": 50}
     })
     assert results_boundary["low_path"]["result"]["category"] == "low"
@@ -335,7 +335,7 @@ except ZeroDivisionError:
     })
 
     runtime = LocalRuntime()
-    results, _ = runtime.execute(workflow.build(), inputs={
+    results, _ = runtime.execute(workflow.build(), parameters={
         "risky_op": {"divisor": 0}
     })
 

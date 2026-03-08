@@ -34,7 +34,7 @@ workflow.add_node("PythonCodeNode", "counter", {
 runtime.execute(workflow.build())  # ERROR: 'x' undefined
 
 # ✅ Fix - provide initial parameters
-runtime.execute(workflow.build(), inputs={
+runtime.execute(workflow.build(), parameters={
     "counter": {"x": 0}  # Starting value
 })
 ```

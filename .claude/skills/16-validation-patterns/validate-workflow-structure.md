@@ -86,7 +86,7 @@ results = runtime.execute(workflow)  # ❌ Missing .build()
 ```python
 # ✅ VALID
 runtime.execute(workflow.build())
-runtime.execute(workflow.build(), inputs={...})
+runtime.execute(workflow.build(), parameters={...})
 await runtime.execute_workflow_async(workflow.build(), inputs={})
 
 # ❌ INVALID

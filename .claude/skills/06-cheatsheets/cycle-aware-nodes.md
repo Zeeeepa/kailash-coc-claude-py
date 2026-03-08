@@ -87,7 +87,7 @@ cycle.connect("optimizer", "optimizer", mapping={"result.quality": "input_data"}
      .build()
 
 runtime = LocalRuntime()
-results, run_id = runtime.execute(built_workflow, inputs={
+results, run_id = runtime.execute(built_workflow, parameters={
     "optimizer": {"target": 0.9}
 })
 ```
