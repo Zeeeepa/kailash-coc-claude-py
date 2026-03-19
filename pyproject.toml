@@ -23,9 +23,9 @@ dependencies = [
     # Kailash SDK (includes: fastapi, uvicorn, pydantic, sqlalchemy, pandas, numpy, requests, pyyaml)
     "kailash>=1.0.0",
     "kailash-nexus>=1.4.2",
-    "kailash-dataflow>=1.0.0",
-    "kailash-kaizen>=1.2.5",
-    "eatp>=0.1.0",
+    "kailash-dataflow>=1.0.1",
+    "kailash-kaizen>=1.3.0",
+    "eatp>=0.2.0",
     "trust-plane>=0.2.1",
     # CLI Framework
     "click>=8.0",
