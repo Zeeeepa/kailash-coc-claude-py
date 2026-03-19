@@ -66,18 +66,23 @@ pip install --upgrade kailash kailash-dataflow kailash-nexus kailash-kaizen
 
 ## ABSOLUTE RULE 6: File Improvement Issues for SDK/COC Gaps
 
-When you encounter unclear, missing, or incorrect SDK or COC documentation that caused you to make a mistake or waste time:
+When you encounter unclear, missing, or incorrect information that caused a mistake or wasted time:
 
-**File an improvement issue immediately:**
+**File an improvement issue immediately** to the appropriate repo:
+
+- **SDK issues** (API behavior, error messages, missing features) → `gh issue create --repo terrene-foundation/kailash-py`
+- **COC issues** (agents, skills, rules, scripts, commands) → `gh issue create --repo terrene-foundation/kailash-coc-claude-py`
+
+COC artifacts to examine: **agents** (intent/delegation), **skills** (context/knowledge), **rules** (guardrails), **scripts/hooks** (automation), **commands** (instructions/workflows).
 
 ```bash
-gh issue create --repo esperie/kailash-py --title "Docs: [what's unclear/missing]" \
-  --label "documentation" --body "## What happened\n...\n## What was unclear\n...\n## Suggested fix\n..."
+gh issue create --repo terrene-foundation/kailash-coc-claude-py \
+  --title "COC: [agent/skill/rule/command] — [what's unclear/missing]" \
+  --label "coc-improvement" \
+  --body "## What happened\n...\n## Which COC artifact\n...\n## Suggested fix\n..."
 ```
 
-This applies to: misleading API docs, missing examples, unclear error messages, COC rules that don't match actual behavior, missing COC skills, or any gap that caused confusion.
-
-**Every mistake caused by unclear documentation is a documentation bug, not a user error.**
+**Every mistake caused by unclear documentation or COC guidance is a system bug, not a user error.**
 
 ## Enforcement
 
